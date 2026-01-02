@@ -18,6 +18,8 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ Mongo Error", err));
 
-app.listen(5000, () => {
-  console.log("🚀 AEORRA Review Backend Running on port 5000");
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`🚀 AEORRA Review Backend Running on port ${PORT}`);
 });
