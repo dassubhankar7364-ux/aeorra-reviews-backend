@@ -8,11 +8,7 @@ const reviewRoutes = require("./routes/reviewRoutes");
 
 const app = express();
 
-app.use(cors({
-  origin: "*",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/reviews", reviewRoutes);
@@ -22,8 +18,6 @@ mongoose
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ Mongo Error", err));
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 AEORRA Review Backend Running on port ${PORT}`);
+app.listen(5000, () => {
+  console.log("🚀 AEORRA Review Backend Running on port 5000");
 });
